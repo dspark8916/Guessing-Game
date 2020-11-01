@@ -7,7 +7,7 @@ var headerEl = document.getElementById("questionHeader");
 // & answers and hide button and reveal question. 
 
 document.getElementById("start").addEventListener("click", function() {
-    var timer = 30;
+    var timer = 60;
 
     var clockTick = setInterval(function() {
         if(timer <= 0) {
