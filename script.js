@@ -5,6 +5,7 @@ var answers = ["text"];
 var timer;
 var questionEl = document.getElementById("question");
 var headerEl = document.getElementById("questionHeader");
+var clock = document.getElementById("countdown");
 
 function onStart() {
     // This function needs to start the timer and add text to questions
