@@ -50,9 +50,12 @@ var questions = [
         correctAnswer: "c",
     },
 ];
-var answers = ["text"];
+
+var answers = [];
 var questionEl = document.getElementById("question");
 var headerEl = document.getElementById("questionHeader");
+var quizDiv = document.getElementById("quiz");
+var highScores = document.getElementById("scores");
 
 // This function needs to start the timer and add text to questions
 // & answers and hide button and reveal question. 
