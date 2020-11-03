@@ -74,3 +74,5 @@ document.getElementById("start").addEventListener("click", function() {
         timer -= 1;
 }, 1000);
 });
+
+function 
