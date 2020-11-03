@@ -75,4 +75,3 @@ document.getElementById("start").addEventListener("click", function() {
 }, 1000);
 });
 
-function 
