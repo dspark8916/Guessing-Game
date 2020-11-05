@@ -61,7 +61,7 @@ document.getElementById("start").addEventListener("click", function() {
     var timer = 60;
     intro.style.display = "none";
     start.style.display = "none";
-    questionEl.style.display = "block";
+    quizDiv.style.display = "block";
     var clockTick = setInterval(function() {
         if(timer <= 0) {
             clearInterval(clockTick);
@@ -71,18 +71,18 @@ document.getElementById("start").addEventListener("click", function() {
             document.getElementById("countdown").innerHTML = timer + " seconds left!!";
         }
         timer -= 1;
-        renderQuestions();
+        renderQuiz();
 }, 1000);
     
 });
 
-function renderQuestions () {
-    if (question === questionIndex.length) {
-        questionsEl.style.display = "none";
-        question = 0;
+function renderQuiz() {
+    if (questions === questionIndex.length) {
+        quizDiv.style.display = "none";
+        questions = 0;
     }
     else {
-        var storedQ = questionsIndex[question];
+        var storedQ = questionIndex[questions];
         headerEl.innerHTML = storedQ.quest;
         answerA.innerHTML = storedQ.a;
         answerB.innerHTML = storedQ.b;
@@ -91,15 +91,15 @@ function renderQuestions () {
     }
 }
 
-function correctAnswer(answer) {
-    if (answer == questionIndex[question].right) {
+function rightAnswer(answer) {
+    if (answer == questionIndex[questions].right) {
         score += 10;
-        question++;
-        renderQuestions();
+        questions++;
+        renderQuiz();
     }
     else {
         timer = timer -10;
-        question++;
-        renderQuestions();
+        questions++;
+        renderQuiz();
     }
 }
