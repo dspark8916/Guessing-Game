@@ -51,8 +51,8 @@ var intro = document.getElementById("rules");
 var questionEl = document.getElementById("questions");
 var headerEl = document.getElementById("questionHeader");
 var quizDiv = document.getElementById("quiz");
-var highScores = document.getElementById("scores");
-var score = 0;
+// var highScores = document.getElementById("scores");
+let score = 0;
 var timer = 60;
 var clockTick; 
 
@@ -98,9 +98,11 @@ function renderQuiz() {
 function rightAnswer(answer) {
     if (answer == questionIndex[questions].right) {
         score += 10;
+        document.getElementById("scores").innerHTML = "Score: " + (timer + score);
     }
     else {
         timer = timer - 10;
+        document.getElementById("scores").innerHTML = "Score: " + (timer + score);
     }
     questions++;
     renderQuiz();
