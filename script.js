@@ -54,6 +54,7 @@ var quizDiv = document.getElementById("quiz");
 var highScores = document.getElementById("scores");
 var score = 0;
 var timer = 60;
+var clockTick; 
 
 // This function needs to start the timer and add text to questions
 // & answers and hide button and reveal question. 
@@ -61,8 +62,11 @@ var timer = 60;
 document.getElementById("start").addEventListener("click", function() {
     intro.style.display = "none";
     start.style.display = "none";
-    quizDiv.style.display = "block";
-    var clockTick = setInterval(function() {
+    setTimer();
+});
+
+function setTimer() {
+    clockTick = setInterval(function() {
         if(timer <= 0) {
             clearInterval(clockTick);
             document.getElementById("countdown").innerHTML = "Time's Up!!";
@@ -70,16 +74,16 @@ document.getElementById("start").addEventListener("click", function() {
         else {
             document.getElementById("countdown").innerHTML = timer + " seconds left!!";
         }
+        quizDiv.style.display = "block";
         timer -= 1;
         renderQuiz();
-}, 1000);
-    
-});
+    }, 1000);
+}
 
 function renderQuiz() {
     if (questions === questionIndex.length) {
         quizDiv.style.display = "none";
-        questions = 0;
+        clearInterval(clockTick);
     }
     else {
         var storedQ = questionIndex[questions];
