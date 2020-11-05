@@ -51,11 +51,10 @@ var intro = document.getElementById("rules");
 var questionEl = document.getElementById("questions");
 var headerEl = document.getElementById("questionHeader");
 var quizDiv = document.getElementById("quiz");
-// var highScores = document.getElementById("scores");
 let score = 0;
 var timer = 60;
 var clockTick; 
-
+var bigCard = document.getElementById("card");
 // This function needs to start the timer and add text to questions
 // & answers and hide button and reveal question. 
 

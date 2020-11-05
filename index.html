@@ -18,6 +18,7 @@
             <h1 class="display-4">Guessing Game Challenge!!</h1>
         </div>
     </div>   
+
     <div class="container text-center">
         <div class="row justify-content-center" style="display: block"; id = "rules">
             <div class="col-md-auto slide">
@@ -33,21 +34,20 @@
                 </button>
             </div>
         </div>
-        <div class="row justify-content-center" style="display: none;" id = "quiz">
+        <div class="row justify-content-center list-group" style="display: none;" id = "quiz">
             <div class="col-md-auto">
                 <h1 id="questionHeader"></h1>
-                <!-- <p id="question"></p> -->
                 <ol id="questions">
-                    <button id="A" onclick="rightAnswer('A')"></button>
+                    <button type="button" class="list-group-item list-group-item-action list-group-item-success" id="A" onclick="rightAnswer('A')"></button>
                     <br>
                     <br>
-                    <button id="B" onclick="rightAnswer('B')"></button>
+                    <button type="button" class="list-group-item list-group-item-action list-group-item-success" id="B" onclick="rightAnswer('B')"></button>
                     <br>
                     <br>
-                    <button id="C" onclick="rightAnswer('C')"></button>
+                    <button type="button" class="list-group-item list-group-item-action list-group-item-success" id="C" onclick="rightAnswer('C')"></button>
                     <br>
                     <br>
-                    <button id="D" onclick="rightAnswer('D')"></button>
+                    <button type="button" class="list-group-item list-group-item-action list-group-item-success" id="D" onclick="rightAnswer('D')"></button>
                 </ol>
             </div>
         </div>
