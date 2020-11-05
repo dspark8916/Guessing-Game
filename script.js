@@ -52,6 +52,10 @@ var questions = [
 ];
 
 var answers = [];
+var answerA = document.getElementById("A");
+var answerB = document.getElementById("B");
+var answerC = document.getElementById("C");
+var answerD = document.getElementById("D");
 var intro = document.getElementById("rules");
 var questionEl = document.getElementById("questions");
 var headerEl = document.getElementById("questionHeader");
@@ -67,6 +71,7 @@ document.getElementById("start").addEventListener("click", function() {
     intro.style.display = "none";
     start.style.display = "none";
     questionEl.style.display = "block";
+    renderQuestions();
     var clockTick = setInterval(function() {
         if(timer <= 0) {
             clearInterval(clockTick);
@@ -78,4 +83,5 @@ document.getElementById("start").addEventListener("click", function() {
         timer -= 1;
 }, 1000);
 });
+
 
