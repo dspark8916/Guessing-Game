@@ -1,7 +1,7 @@
 var questions = [ 
     {
         question: "What is 2 + 2?",
-        answer: {
+        answers: {
             a: "6",
             b: "2",
             c: "4",
@@ -11,7 +11,7 @@ var questions = [
     },
     {
         question: "What color is the sky?",
-        answer: {
+        answers: {
             a: "red",
             b: "yellow",
             c: "green",
@@ -21,7 +21,7 @@ var questions = [
     },
     {
         question: "How many inches in a foot?",
-        answer: {
+        answers: {
             a: "12",
             b: "10",
             c: "14",
@@ -31,7 +31,7 @@ var questions = [
     },
     {
         question: "How many letters in the alphabet?",
-        answer: {
+        answers: {
             a: "32",
             b: "26",
             c: "24",
@@ -41,7 +41,7 @@ var questions = [
     },
     {
         question: "What sport does not use a round ball?",
-        answer: {
+        answers: {
             a: "Baseball",
             b: "Soccer",
             c: "Football",
@@ -52,17 +52,20 @@ var questions = [
 ];
 
 var answers = [];
+var intro = document.getElementById("rules");
 var questionEl = document.getElementById("question");
 var headerEl = document.getElementById("questionHeader");
 var quizDiv = document.getElementById("quiz");
 var highScores = document.getElementById("scores");
+var score = 0;
 
 // This function needs to start the timer and add text to questions
 // & answers and hide button and reveal question. 
 
 document.getElementById("start").addEventListener("click", function() {
     var timer = 60;
-
+    intro.style.display = "none";
+    questionEl.style.display = "block";
     var clockTick = setInterval(function() {
         if(timer <= 0) {
             clearInterval(clockTick);
