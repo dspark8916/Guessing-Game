@@ -1,4 +1,4 @@
-var questionIndex = [ 
+let questionIndex = [ 
     {
         quest: "What is 2 + 2?",
         a: "6",
@@ -71,8 +71,9 @@ document.getElementById("start").addEventListener("click", function() {
             document.getElementById("countdown").innerHTML = timer + " seconds left!!";
         }
         timer -= 1;
+        renderQuestions();
 }, 1000);
-    renderQuestions();
+    
 });
 
 function renderQuestions () {
@@ -87,5 +88,18 @@ function renderQuestions () {
         answerB.innerHTML = storedQ.b;
         answerC.innerHTML = storedQ.c;
         answerD.innerHTML = storedQ.d;
+    }
+}
+
+function correctAnswer(answer) {
+    if (answer == questionIndex[question].right) {
+        score += 10;
+        question++;
+        renderQuestions();
+    }
+    else {
+        timer = timer -10;
+        question++;
+        renderQuestions();
     }
 }
