@@ -33,10 +33,16 @@
                 </button>
             </div>
         </div>
-        <div class="row justify-content-center hidden" id = "quiz">
+        <div class="row justify-content-center" style="display: none;" id = "quiz">
             <div class="col-md-auto">
                 <h1 id="questionHeader"></h1>
-                <p id="question"></p>
+                <!-- <p id="question"></p> -->
+                <ol id="questions">
+                    <button id="A" onclick="rightAnswer('A')"></button>
+                    <button id="B" onclick="rightAnswer('B')"></button>
+                    <button id="C" onclick="rightAnswer('C')"></button>
+                    <button id="D" onclick="rightAnswer('D')"></button>
+                </ol>
             </div>
         </div>
         <div class = "row justify-content-center timer">

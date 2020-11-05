@@ -53,7 +53,7 @@ var questions = [
 
 var answers = [];
 var intro = document.getElementById("rules");
-var questionEl = document.getElementById("question");
+var questionEl = document.getElementById("questions");
 var headerEl = document.getElementById("questionHeader");
 var quizDiv = document.getElementById("quiz");
 var highScores = document.getElementById("scores");
@@ -65,6 +65,7 @@ var score = 0;
 document.getElementById("start").addEventListener("click", function() {
     var timer = 60;
     intro.style.display = "none";
+    start.style.display = "none";
     questionEl.style.display = "block";
     var clockTick = setInterval(function() {
         if(timer <= 0) {
