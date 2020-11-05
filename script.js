@@ -1,56 +1,47 @@
-var questions = [ 
+var questionIndex = [ 
     {
-        question: "What is 2 + 2?",
-        answers: {
-            a: "6",
-            b: "2",
-            c: "4",
-            d: "5"
-        },
-        correctAnswer: "c"
+        quest: "What is 2 + 2?",
+        a: "6",
+        b: "2",
+        c: "4",
+        d: "5",
+        right: "C"
     },
     {
-        question: "What color is the sky?",
-        answers: {
-            a: "red",
-            b: "yellow",
-            c: "green",
-            d: "blue",
-        },
-        correctAnswer: "d"
+        quest: "What color is the sky?",
+        a: "red",
+        b: "yellow",
+        c: "green",
+        d: "blue",
+        right: "D"
     },
     {
-        question: "How many inches in a foot?",
-        answers: {
-            a: "12",
-            b: "10",
-            c: "14",
-            d: "16",
-        },
-        correctAnswer: "a"
+        quest: "How many inches in a foot?",
+        a: "12",
+        b: "10",
+        c: "14",
+        d: "16",
+        right: "A"
     },
     {
-        question: "How many letters in the alphabet?",
-        answers: {
-            a: "32",
-            b: "26",
-            c: "24",
-            d: "28",
-        },
-        correctAnswer: "b"
+        quest: "How many letters in the alphabet?",
+        a: "32",
+        b: "26",
+        c: "24",
+        d: "28",
+        right: "B"
     },
     {
-        question: "What sport does not use a round ball?",
-        answers: {
-            a: "Baseball",
-            b: "Soccer",
-            c: "Football",
-            d: "Basketball",
-        },
-        correctAnswer: "c",
-    },
+        quest: "What sport does not use a round ball?",
+        a: "Baseball",
+        b: "Soccer",
+        c: "Football",
+        d: "Basketball",
+        right: "C",
+    }
 ];
 
+var questions = 0;
 var answers = [];
 var answerA = document.getElementById("A");
 var answerB = document.getElementById("B");
@@ -71,7 +62,6 @@ document.getElementById("start").addEventListener("click", function() {
     intro.style.display = "none";
     start.style.display = "none";
     questionEl.style.display = "block";
-    renderQuestions();
     var clockTick = setInterval(function() {
         if(timer <= 0) {
             clearInterval(clockTick);
@@ -82,6 +72,20 @@ document.getElementById("start").addEventListener("click", function() {
         }
         timer -= 1;
 }, 1000);
+    renderQuestions();
 });
 
-
+function renderQuestions () {
+    if (question === questionIndex.length) {
+        questionsEl.style.display = "none";
+        question = 0;
+    }
+    else {
+        var storedQ = questionsIndex[question];
+        headerEl.innerHTML = storedQ.quest;
+        answerA.innerHTML = storedQ.a;
+        answerB.innerHTML = storedQ.b;
+        answerC.innerHTML = storedQ.c;
+        answerD.innerHTML = storedQ.d;
+    }
+}
