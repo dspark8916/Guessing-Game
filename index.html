@@ -13,7 +13,7 @@
 </head>
 <body>
     
-    <div class = "jumbotron jumbotron-fluid bg-info text-white text-center text-uppercase">
+    <div class = "jumbotron jumbotron-fluid text-black text-center text-uppercase">
         <div class="container">
             <h1 class="display-4">Guessing Game Challenge!!</h1>
         </div>
@@ -40,9 +40,12 @@
                 <ol id="questions">
                     <button id="A" onclick="rightAnswer('A')"></button>
                     <br>
+                    <br>
                     <button id="B" onclick="rightAnswer('B')"></button>
                     <br>
+                    <br>
                     <button id="C" onclick="rightAnswer('C')"></button>
+                    <br>
                     <br>
                     <button id="D" onclick="rightAnswer('D')"></button>
                 </ol>
@@ -51,8 +54,8 @@
         <div class = "row justify-content-center timer">
             <h2 id = "countdown"></h2>
         </div>
-        <div id = "scores">
-            <h2></h2>
+        <div class = "row justify-content-center">
+            <h2 id = "scores"></h2>
         </div>
 
     </div>
