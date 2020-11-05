@@ -53,12 +53,12 @@ var headerEl = document.getElementById("questionHeader");
 var quizDiv = document.getElementById("quiz");
 var highScores = document.getElementById("scores");
 var score = 0;
+var timer = 60;
 
 // This function needs to start the timer and add text to questions
 // & answers and hide button and reveal question. 
 
 document.getElementById("start").addEventListener("click", function() {
-    var timer = 60;
     intro.style.display = "none";
     start.style.display = "none";
     quizDiv.style.display = "block";
@@ -94,12 +94,10 @@ function renderQuiz() {
 function rightAnswer(answer) {
     if (answer == questionIndex[questions].right) {
         score += 10;
-        questions++;
-        renderQuiz();
     }
     else {
-        timer = timer -10;
-        questions++;
-        renderQuiz();
+        timer = timer - 10;
     }
+    questions++;
+    renderQuiz();
 }
