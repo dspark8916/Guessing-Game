@@ -21,35 +21,40 @@
 
     <div class="container text-center">
         <div class="row justify-content-center" style="display: block"; id = "rules">
-            <div class="col-md-auto slide">
+            <div class="col-md-auto slide card rounded-lg border border-dark">
+                <div class="card-body">
             <h3>
                 Answer the following questions before the time expires. There will be 5 questions and you will have 60 seconds to complete the quiz. 
                 Once you're done you will get your score. Your time gets added with your score for correct answers. Good luck!! Please press start to begin!!
             </h3>
+                </div>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
         <div class="row justify-content-center">
             <div class="col-md-auto">
-                <button type="button" class="startBtn btn-lg list-group-item-success rounded-lg border border-dark" id="start">
+                <button type="button" class="startBtn btn-lg list-group-item-success rounded-lg border border-dark text-black" id="start">
                     Start!!
                 </button>
             </div>
         </div>
         <div class="row justify-content-center list-group" style="display: none;" id = "quiz">
-            <div class="col-md-auto">
+            <div class="col-md-auto justify-content-center">
                 <h1 id="questionHeader"></h1>
-                <ol id="questions">
-                    <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="A" onclick="rightAnswer('A')"></button>
-                    <br>
-                    <br>
-                    <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="B" onclick="rightAnswer('B')"></button>
-                    <br>
-                    <br>
-                    <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="C" onclick="rightAnswer('C')"></button>
-                    <br>
-                    <br>
-                    <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="D" onclick="rightAnswer('D')"></button>
-                </ol>
+                    <ol id="questions">
+                        <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="A" onclick="rightAnswer('A')"></button>
+                        <br>
+                        <br>
+                        <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="B" onclick="rightAnswer('B')"></button>
+                        <br>
+                        <br>
+                        <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="C" onclick="rightAnswer('C')"></button>
+                        <br>
+                        <br>
+                        <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="D" onclick="rightAnswer('D')"></button>
+                    </ol>
             </div>
         </div>
         <div class = "row justify-content-center timer">
@@ -60,21 +65,6 @@
         </div>
 
     </div>
-
-
-
-
-<!-- GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score -->
 
 <script src="./script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
