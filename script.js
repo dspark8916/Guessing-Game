@@ -59,7 +59,7 @@ var endTime = document.querySelector("timer");
 var over = document.getElementById("endGame");
 var finalScore = document.getElementById("finalScore");
 var initials = document.getElementById("initials");
-var submitBtn = document.getElementById("submit"):
+var submitBtn = document.getElementById("submit");
 var topScores = document.getElementById("scorelist");
 var returnBtn = document.getElementById("return");
 var clearBtn = document.getElementById("clear");
@@ -124,5 +124,12 @@ function rightAnswer(answer) {
 
 function scoreBoard () {
     quizDiv.style.display = "none";
+    over.style.display = "block";
+}
 
+submitBtn.addEventListener("click", topScores);
+
+function scoreslist () {
+    over.style.display = "none";
+    topScores.style.display = "block";
 }
