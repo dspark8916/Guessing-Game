@@ -30,9 +30,11 @@
                 </div>
             </div>
         </div>
+        
         <br>
         <br>
         <br>
+        
         <div class="row justify-content-center">
             <div class="col-md-auto">
                 <button type="button" class="startBtn btn-lg list-group-item-success rounded-lg border border-dark text-black" id="start">
@@ -40,6 +42,7 @@
                 </button>
             </div>
         </div>
+        
         <div class="row justify-content-center list-group" style="display: none;" id = "quiz">
             <div class="col-md-auto justify-content-center">
                 <h1 id="questionHeader"></h1>
@@ -54,12 +57,25 @@
                     </ol>
             </div>
         </div>
+        
         <div class = "row justify-content-center timer" style="display: block;">
             <h1 id = "countdown"></h1>
         </div>
+        
         <div class = "row justify-content-center">
             <h1 id = "scores"></h1>
         </div>
+        
+        <div id = "endGame" style="display: none;">
+            <div>
+                <h2>Game Over!!</h2>
+                <p id = "finalScore"></p>
+                <p>Please Enter Your Initials</p>
+                <input id = "initials" type = "text" required>
+                <button id = "submit" onclick = "getInputValue();">Submit</button>
+            </div>
+        </div>
+        
         <div class="row justify-content-center highscores">
             <h1 id = "scorelist"></h1>
         </div>

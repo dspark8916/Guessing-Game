@@ -115,3 +115,8 @@ function rightAnswer(answer) {
    }
     questions++;
 }
+
+function scoreBoard () {
+    quizDiv.style.display = "none";
+    
+}
