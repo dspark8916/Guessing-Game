@@ -56,7 +56,13 @@ var timer = 60;
 var clockTick; 
 var timing = document.getElementById("countdown");
 var endTime = document.querySelector("timer");
+var over = document.getElementById("endGame");
+var finalScore = document.getElementById("finalScore");
+var initials = document.getElementById("initials");
+var submitBtn = document.getElementById("submit"):
 var topScores = document.getElementById("scorelist");
+var returnBtn = document.getElementById("return");
+var clearBtn = document.getElementById("clear");
 // This function needs to start the timer and add text to questions
 // & answers and hide button and reveal question. 
 
@@ -118,5 +124,5 @@ function rightAnswer(answer) {
 
 function scoreBoard () {
     quizDiv.style.display = "none";
-    
+
 }
