@@ -66,24 +66,25 @@ document.getElementById("start").addEventListener("click", function() {
     setTimer();
 });
 
-// function setTimer() {
-//     clockTick = setInterval(function() {
-//         if(timer <= 0) {
-//             clearInterval(clockTick);
-//             timing.innerHTML = "Time's Up!!";
-//         }
-//         else {
-//             timing.innerHTML = timer + " seconds left!!";
-//         }
-//         quizDiv.style.display = "block";
-//         timer -= 1;
-//         renderQuiz();
-//     }, 1000);
-// }
+function setTimer() {
+    clockTick = setInterval(function() {
+        if(timer <= 0) {
+            clearInterval(clockTick);
+            timing.innerHTML = "Time's Up!!";
+        }
+        else {
+            timing.innerHTML = timer + " seconds left!!";
+        }
+        quizDiv.style.display = "block";
+        timer -= 1;
+        renderQuiz();
+    }, 1000);
+}
+
 function renderQuiz() {
     if (questions === questionIndex.length) {
         quizDiv.style.display = "none";
-        clearInterval(interval);
+        clearInterval(clockTick);
     }
     else {
         var storedQ = questionIndex[questions];
@@ -108,65 +109,8 @@ function rightAnswer(answer) {
     questions++;
 }
 
-function highScores() {
-    if(typeof(Storage)!=="undefined") {
-        var scoreBoard = false;
-        if(localStorage["topScores"]) {
-            topScores.style.display = "block";
-            topScores.innerHTML = '';
-            scoreBoard = JSON.parse(localStorage["topScores"]);
-            scoreBoard = scoreBoard.sort(function(a,b){return parseInt(b)-parseInt(a)};
-
-            for(var i = 0; i < 10; i++) {
-                var s = scoreBoard[i];
-                var frags = document.createElement('li');
-                frags.innerHTML = (typeof(s) != "undefined" ? s : "");
-                topScores.appendChild(frags);
-            }
-        }
-    } else {
-        style.display = "none";
+function endQuiz() {
+    if (questions < questionIndex.length) {
+        score();
     }
 }
-
-function Stop(interval) {
-    clearInterval(interval);
-}
-
-this.start = function() {
-    score.innerHTML = "0";
-    start.style.display = "none";
-    var interval = setInterval(100);
-
-    var count = 10;
-    var counter = null;
-
-    function timers() {
-        count = count -1;
-        if (count <= 0) {
-            var left = document.querySelector("timer");
-
-            for (var i = 0; i < left.length; i++) {
-                if(left[i] && left[i].parentNode) {
-                    left[i].parentNode.removeChild(left[i]);
-                }
-            }
-            Stop(interval);
-            Stop(counter);
-            timing.innerHTML = "Game Over!";
-            start.style.display = "block";
-
-            updateScore();
-
-            return;
-        } else {
-            timing.innerHTML = count + " seconds left";
-        }
-    }
-
-    counter = setInterval(timers, 6000);
-
-    setTimeout( function() {
-        stop(interval);
-    }, count * 1000)
-};
