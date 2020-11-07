@@ -55,6 +55,7 @@ let score = 0;
 var timer = 60;
 var clockTick; 
 var timing = document.getElementById("countdown");
+var points = document.getElementById("scores");
 var endTime = document.querySelector("timer");
 var over = document.getElementById("endGame");
 var finalScore = document.getElementById("finalScore");
@@ -63,6 +64,7 @@ var submitBtn = document.getElementById("submit");
 var topScores = document.getElementById("scorelist");
 var returnBtn = document.getElementById("back");
 var clearBtn = document.getElementById("clear");
+var listLink = document.getElementById("listLink");
 // This function needs to start the timer and add text to questions
 // & answers and hide button and reveal question. 
 
@@ -113,33 +115,37 @@ function renderQuiz() {
 function rightAnswer(answer) {
     if (answer == questionIndex[questions].right) {
         score += 25;
-        document.getElementById("scores").innerHTML = "Score: " + score;
+        points.innerHTML = "Score: " + score;
     }
     else {
         timer = timer - 10;
-        document.getElementById("scores").innerHTML = "Score: " + score;
+        points.innerHTML = "Score: " + score;
    }
     questions++;
 }
 
-function scoreBoard () {
+function scoreBoard() {
     quizDiv.style.display = "none";
     over.style.display = "block";
 }
 
-submitBtn.addEventListener("click", topScores);
-
-function scoreslist () {
+submitBtn.addEventListener("click", function() {
     over.style.display = "none";
     topScores.style.display = "block";
-}
+})
 
-returnBtn.addEventListener("click", back);
-
-function tryAgain () {
+returnBtn.addEventListener("click", function(){
     topScores.style.display = "none";
     quizDiv.style.display = "block";
-}
+})
 
+listLink.addEventListener("click", function(){
+    quizDiv.style.display = "none";
+    over.style.display = "none";
+    points.style.display = "none";
+    intro.style.display = "none";
+    start.style.display = "none";
+    topScores.style.display = "block";
+})
 
 
