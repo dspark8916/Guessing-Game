@@ -92,6 +92,7 @@ function renderQuiz() {
     if (questions === questionIndex.length) {
         quizDiv.style.display = "none";
         clearInterval(clockTick);
+        timing.style.display = "none";
     }
     else {
         var storedQ = questionIndex[questions];
@@ -111,14 +112,6 @@ function rightAnswer(answer) {
     else {
         timer = timer - 10;
         document.getElementById("scores").innerHTML = "Score: " + score;
-      
-    }
+   }
     questions++;
 }
-
-// function endQuiz() {
-//     if (questions < questionIndex.length) {
-//         timing.style.display = "none";
-//         clearInterval(clockTick);
-//     }
-// }
