@@ -21,3 +21,12 @@ body {
     font-size: 25px;
     font-weight: bold;
 }
+
+#questions {
+    font-size: 25px;
+}
+
+#scores {
+    font-size: 50px;
+    font-weight: bold;
+}

@@ -25,7 +25,7 @@
                 <div class="card-body">
             <h3>
                 Answer the following questions before the time expires. There will be 5 questions and you will have 60 seconds to complete the quiz. 
-                Once you're done you will get your score. Your time gets added with your score for correct answers. Good luck!! Please press start to begin!!
+                For wrong answers you lose 10 seconds from the timer. Once you're done you will get your score. Good luck!! Please press start to begin!!
             </h3>
                 </div>
             </div>
@@ -46,12 +46,9 @@
                     <ol id="questions">
                         <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="A" onclick="rightAnswer('A')"></button>
                         <br>
-                        <br>
                         <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="B" onclick="rightAnswer('B')"></button>
                         <br>
-                        <br>
                         <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="C" onclick="rightAnswer('C')"></button>
-                        <br>
                         <br>
                         <button type="button" class="list-group-item list-group-item-action list-group-item-success rounded-lg border border-dark w-25 mx-auto" id="D" onclick="rightAnswer('D')"></button>
                     </ol>
@@ -62,6 +59,9 @@
         </div>
         <div class = "row justify-content-center">
             <h1 id = "scores"></h1>
+        </div>
+        <div class="row justify-content-center highscores">
+            <h1 id = "scorelist"></h1>
         </div>
 
     </div>

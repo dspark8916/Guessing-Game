@@ -1,42 +1,42 @@
 let questionIndex = [ 
     {
-        quest: "What is 2 + 2?",
-        a: "6",
-        b: "2",
-        c: "4",
-        d: "5",
+        quest: "Who is the richest person in the world as of 2020?",
+        a: "A. Bill Gates",
+        b: "B. Warren Buffet",
+        c: "C. Jeff Bezos",
+        d: "D. Richard Branson",
         right: "C"
     },
     {
-        quest: "What color is the sky?",
-        a: "red",
-        b: "yellow",
-        c: "green",
-        d: "blue",
+        quest: "What is the most popular sport in the World?",
+        a: "A. Football",
+        b: "B. Basketball",
+        c: "C. Baseball",
+        d: "D. Soccer",
         right: "D"
     },
     {
-        quest: "How many inches in a foot?",
-        a: "12",
-        b: "10",
-        c: "14",
-        d: "16",
+        quest: "How many Wonders of the World are there?",
+        a: "A. 7",
+        b: "B. 10",
+        c: "C. 12",
+        d: "D. 8",
         right: "A"
     },
     {
-        quest: "How many letters in the alphabet?",
-        a: "32",
-        b: "26",
-        c: "24",
-        d: "28",
+        quest: "What is the oldest language in the world?",
+        a: "A. English",
+        b: "B. Tamil",
+        c: "C. Latin",
+        d: "D. Greek",
         right: "B"
     },
     {
-        quest: "What sport does not use a round ball?",
-        a: "Baseball",
-        b: "Soccer",
-        c: "Football",
-        d: "Basketball",
+        quest: "Who created the first social media site?",
+        a: "A. Mark Zuckerberg",
+        b: "B. Tom Anderson",
+        c: "C. Andrew Weinreich",
+        d: "D. Chris DeWolfe",
         right: "C",
     }
 ];
@@ -54,7 +54,9 @@ var quizDiv = document.getElementById("quiz");
 let score = 0;
 var timer = 60;
 var clockTick; 
-var bigCard = document.getElementById("card");
+var timing = document.getElementById("countdown");
+var endTime = document.querySelector("timer");
+var topScores = document.getElementById("scorelist");
 // This function needs to start the timer and add text to questions
 // & answers and hide button and reveal question. 
 
@@ -64,25 +66,24 @@ document.getElementById("start").addEventListener("click", function() {
     setTimer();
 });
 
-function setTimer() {
-    clockTick = setInterval(function() {
-        if(timer <= 0) {
-            clearInterval(clockTick);
-            document.getElementById("countdown").innerHTML = "Time's Up!!";
-        }
-        else {
-            document.getElementById("countdown").innerHTML = timer + " seconds left!!";
-        }
-        quizDiv.style.display = "block";
-        timer -= 1;
-        renderQuiz();
-    }, 1000);
-}
-
+// function setTimer() {
+//     clockTick = setInterval(function() {
+//         if(timer <= 0) {
+//             clearInterval(clockTick);
+//             timing.innerHTML = "Time's Up!!";
+//         }
+//         else {
+//             timing.innerHTML = timer + " seconds left!!";
+//         }
+//         quizDiv.style.display = "block";
+//         timer -= 1;
+//         renderQuiz();
+//     }, 1000);
+// }
 function renderQuiz() {
     if (questions === questionIndex.length) {
         quizDiv.style.display = "none";
-        clearInterval(clockTick);
+        clearInterval(interval);
     }
     else {
         var storedQ = questionIndex[questions];
@@ -96,13 +97,76 @@ function renderQuiz() {
 
 function rightAnswer(answer) {
     if (answer == questionIndex[questions].right) {
-        score += 10;
-        document.getElementById("scores").innerHTML = "Score: " + (timer + score);
+        score += 25;
+        document.getElementById("scores").innerHTML = "Score: " + score;
     }
     else {
         timer = timer - 10;
-        document.getElementById("scores").innerHTML = "Score: " + (timer + score);
+        document.getElementById("scores").innerHTML = "Score: " + score;
+      
     }
     questions++;
-    renderQuiz();
 }
+
+function highScores() {
+    if(typeof(Storage)!=="undefined") {
+        var scoreBoard = false;
+        if(localStorage["topScores"]) {
+            topScores.style.display = "block";
+            topScores.innerHTML = '';
+            scoreBoard = JSON.parse(localStorage["topScores"]);
+            scoreBoard = scoreBoard.sort(function(a,b){return parseInt(b)-parseInt(a)};
+
+            for(var i = 0; i < 10; i++) {
+                var s = scoreBoard[i];
+                var frags = document.createElement('li');
+                frags.innerHTML = (typeof(s) != "undefined" ? s : "");
+                topScores.appendChild(frags);
+            }
+        }
+    } else {
+        style.display = "none";
+    }
+}
+
+function Stop(interval) {
+    clearInterval(interval);
+}
+
+this.start = function() {
+    score.innerHTML = "0";
+    start.style.display = "none";
+    var interval = setInterval(100);
+
+    var count = 10;
+    var counter = null;
+
+    function timers() {
+        count = count -1;
+        if (count <= 0) {
+            var left = document.querySelector("timer");
+
+            for (var i = 0; i < left.length; i++) {
+                if(left[i] && left[i].parentNode) {
+                    left[i].parentNode.removeChild(left[i]);
+                }
+            }
+            Stop(interval);
+            Stop(counter);
+            timing.innerHTML = "Game Over!";
+            start.style.display = "block";
+
+            updateScore();
+
+            return;
+        } else {
+            timing.innerHTML = count + " seconds left";
+        }
+    }
+
+    counter = setInterval(timers, 6000);
+
+    setTimeout( function() {
+        stop(interval);
+    }, count * 1000)
+};
