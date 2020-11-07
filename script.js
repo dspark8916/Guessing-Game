@@ -136,5 +136,10 @@ function scoreslist () {
 
 returnBtn.addEventListener("click", back);
 
+function tryAgain () {
+    topScores.style.display = "none";
+    quizDiv.style.display = "block";
+}
+
 
 
