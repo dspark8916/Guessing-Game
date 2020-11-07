@@ -66,19 +66,40 @@ document.getElementById("start").addEventListener("click", function() {
     setTimer();
 });
 
+// function setTimer() {
+//     clockTick = setInterval(function() {
+//         if(timer <= 0) {
+//             clearInterval(clockTick);
+//             timing.innerHTML = "Time's Up!!";
+//         }
+//         else {
+//             timing.innerHTML = timer + " seconds left!!";
+//         }
+//         quizDiv.style.display = "block";
+//         timer -= 1;
+//         renderQuiz();
+//     }, 1000);
+// }
+
 function setTimer() {
     clockTick = setInterval(function() {
-        if(timer <= 0) {
-            clearInterval(clockTick);
-            timing.innerHTML = "Time's Up!!";
-        }
-        else {
-            timing.innerHTML = timer + " seconds left!!";
-        }
-        quizDiv.style.display = "block";
-        timer -= 1;
-        renderQuiz();
+        startTimer()
     }, 1000);
+}
+
+function startTimer() {
+    timing.innerHTML = timer + " seconds left!!";
+    timer--;
+
+    if (timer == 0) {
+        clearInterval(clockTick);
+        endTimer();
+    }
+    renderQuiz();
+}
+
+function endTimer() {
+    timing.innerHTML = "Time's Up!!";
 }
 
 function renderQuiz() {
@@ -109,8 +130,8 @@ function rightAnswer(answer) {
     questions++;
 }
 
-function endQuiz() {
-    if (questions < questionIndex.length) {
-        score();
-    }
-}
+// function endQuiz() {
+//     if (questions < questionIndex.length) {
+//         score();
+//     }
+// }
