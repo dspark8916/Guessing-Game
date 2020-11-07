@@ -66,21 +66,6 @@ document.getElementById("start").addEventListener("click", function() {
     setTimer();
 });
 
-// function setTimer() {
-//     clockTick = setInterval(function() {
-//         if(timer <= 0) {
-//             clearInterval(clockTick);
-//             timing.innerHTML = "Time's Up!!";
-//         }
-//         else {
-//             timing.innerHTML = timer + " seconds left!!";
-//         }
-//         quizDiv.style.display = "block";
-//         timer -= 1;
-//         renderQuiz();
-//     }, 1000);
-// }
-
 function setTimer() {
     clockTick = setInterval(function() {
         startTimer()
@@ -95,6 +80,7 @@ function startTimer() {
         clearInterval(clockTick);
         endTimer();
     }
+    quizDiv.style.display = "block";
     renderQuiz();
 }
 
@@ -132,6 +118,7 @@ function rightAnswer(answer) {
 
 // function endQuiz() {
 //     if (questions < questionIndex.length) {
-//         score();
+//         timing.style.display = "none";
+//         clearInterval(clockTick);
 //     }
 // }
