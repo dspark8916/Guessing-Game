@@ -61,7 +61,7 @@ var finalScore = document.getElementById("finalScore");
 var initials = document.getElementById("initials");
 var submitBtn = document.getElementById("submit");
 var topScores = document.getElementById("scorelist");
-var returnBtn = document.getElementById("return");
+var returnBtn = document.getElementById("back");
 var clearBtn = document.getElementById("clear");
 // This function needs to start the timer and add text to questions
 // & answers and hide button and reveal question. 
@@ -133,3 +133,8 @@ function scoreslist () {
     over.style.display = "none";
     topScores.style.display = "block";
 }
+
+returnBtn.addEventListener("click", back);
+
+
+
