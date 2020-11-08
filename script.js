@@ -124,35 +124,35 @@ function rightAnswer(answer) {
     questions++;
 }
 
-// function scoreBoard() {
-//     quizDiv.style.display = "none";
-//     over.style.display = "block";
-// }
+function scoreBoard() {
+    quizDiv.style.display = "none";
+    over.style.display = "block";
+}
 
 submitBtn.addEventListener("click", function() {
     over.style.display = "none";
     topScores.style.display = "block";
 })
 
-returnBtn.addEventListener("click", function(){
-    topScores.style.display = "none";
-    quizDiv.style.display = "none";
-    returnBtn.style.display = "none";
-    clearBtn.style.display = "none";
-    intro.style.display = "block";
-    start.style.display = "block";
-})
+// returnBtn.addEventListener("click", function(){
+//     topScores.style.display = "none";
+//     quizDiv.style.display = "none";
+//     returnBtn.style.display = "none";
+//     clearBtn.style.display = "none";
+//     intro.style.display = "block";
+//     start.style.display = "block";
+// })
 
-listLink.addEventListener("click", function(){
-    quizDiv.style.display = "none";
-    over.style.display = "none";
-    points.style.display = "none";
-    intro.style.display = "none";
-    start.style.display = "none";
-    topScores.style.display = "block";
-    returnBtn.style.display = "block";
-    clearBtn.style.display = "block";
-})
+// listLink.addEventListener("click", function(){
+//     quizDiv.style.display = "none";
+//     over.style.display = "none";
+//     points.style.display = "none";
+//     intro.style.display = "none";
+//     start.style.display = "none";
+//     topScores.style.display = "block";
+//     returnBtn.style.display = "block";
+//     clearBtn.style.display = "block";
+// })
 
 function savedScore() {
     var savedScore = document.getElementById("initials").value;
