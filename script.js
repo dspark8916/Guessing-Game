@@ -59,20 +59,28 @@ var points = document.getElementById("scores");
 var endTime = document.querySelector("timer");
 var over = document.getElementById("endGame");
 var finalScore = document.getElementById("finalScore");
-var initials = document.getElementById("initials");
+// var initials = document.getElementById("initials");
 var submitBtn = document.getElementById("submit");
 var topScores = document.getElementById("scorelist");
 var returnBtn = document.getElementById("back");
 var clearBtn = document.getElementById("clear");
 var listLink = document.getElementById("listLink");
+var bestScores = document.getElementById("highscores");
+var startBtn = document.getElementById("start");
 // This function needs to start the timer and add text to questions
 // & answers and hide button and reveal question. 
 
-document.getElementById("start").addEventListener("click", function() {
-    intro.style.display = "none";
-    start.style.display = "none";
-    setTimer();
-});
+// document.getElementById("start").addEventListener("click", function() {
+//     intro.style.display = "none";
+//     start.style.display = "none";
+//     setTimer();
+// });
+
+startBtn.addEventListener("click", function begin() {
+        intro.style.display = "none";
+        start.style.display = "none";
+        setTimer();
+    });
 
 function setTimer() {
     clockTick = setInterval(function() {
@@ -101,6 +109,10 @@ function renderQuiz() {
         quizDiv.style.display = "none";
         clearInterval(clockTick);
         timing.style.display = "none";
+        over.style.display = "block";
+        returnBtn.style.display = "block";
+        clearBtn.style.display = "block";
+        topScores.style.display = "block";
     }
     else {
         var storedQ = questionIndex[questions];
@@ -129,36 +141,53 @@ function scoreBoard() {
     over.style.display = "block";
 }
 
-submitBtn.addEventListener("click", function() {
-    over.style.display = "none";
+submitBtn.addEventListener("click", topScore);
+
+function topScore() {
+    over.style.display = "block";
     topScores.style.display = "block";
+}
+
+returnBtn.addEventListener("click", function(){
+    returnBtn.style.display = "none";
+    clearBtn.style.display = "none";
+    bestScores.style.display = "none";
+    intro.style.display = "block";
+    start.style.display = "block";
 })
 
-// returnBtn.addEventListener("click", function(){
-//     topScores.style.display = "none";
-//     quizDiv.style.display = "none";
-//     returnBtn.style.display = "none";
-//     clearBtn.style.display = "none";
-//     intro.style.display = "block";
-//     start.style.display = "block";
+// clearBtn.addEventListener("click", function() {
+
 // })
 
-// listLink.addEventListener("click", function(){
-//     quizDiv.style.display = "none";
-//     over.style.display = "none";
-//     points.style.display = "none";
-//     intro.style.display = "none";
-//     start.style.display = "none";
-//     topScores.style.display = "block";
-//     returnBtn.style.display = "block";
-//     clearBtn.style.display = "block";
-// })
+listLink.addEventListener("click", showScores);
+
+function clearScores() {
+    document.getElementById("highscores").reset();
+}
+
+function showScores() {
+    over.style.display = "none";
+    bestScores.style.display = "block";
+    intro.style.display = "none";
+}
+
+listLink.addEventListener("click", function(){
+    quizDiv.style.display = "none";
+    over.style.display = "none";
+    points.style.display = "none";
+    intro.style.display = "none";
+    start.style.display = "none";
+    topScores.style.display = "block";
+    returnBtn.style.display = "block";
+    clearBtn.style.display = "block";
+})
 
 function savedScore() {
-    var savedScore = document.getElementById("initials").value;
+    var savedScores = document.getElementById("initials").value;
 
-    var p = document.createElement("<p>");
-    p.innerText = savedScore + score;
+    var p = document.createElement("p");
+    p.innerText = savedScores + ' ' + score;
     topScores.appendChild(p);
 }
 

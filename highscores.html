@@ -21,10 +21,10 @@
     
     <div class="container text-center">
         <div class="row justify-content-center" style="display: block"; id = "rules">
-            <div class="row justify-content-center highscores" style="display: block;">
+            <div class="row justify-content-center" id="highscores" style="display: block;">
                 <h1 id = "scorelist">--- High Scores ---</h1>
                 <button id = "back" onclick = "location.href='index.html'">Go Back</button>
-                <button id = "clear">Clear Highscores</button>
+                <button onclick="clearScores()" value="reset">Clear Highscores</button>
             </div>
         </div>
     </div>
@@ -32,5 +32,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./highscores.js"></script>
 </body>
 </html>
