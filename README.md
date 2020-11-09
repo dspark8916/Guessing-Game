@@ -40,8 +40,10 @@ SO THAT I can gauge my progress compared to my peers
 [Guessing Game](https://dspark8916.github.io/Guessing-Game/)
 
     **ScreenShots**
-![]()
+![Start of Quiz](assets/Start of Game.png)
 
-![]()
+![Question]()
 
-![]()
+![End of Quiz]()
+
+![Highscores]()
