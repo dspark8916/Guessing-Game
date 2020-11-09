@@ -2,6 +2,10 @@
 
 ## Description
 
+    Throughout this Bootcamp we have learned a lot and this week it was time to put it all together!! This week our task was to construct a timed coding quiz with multiple-choice questions. This app runs in the browser, and features dynamically updated HTML and CSS powered by JavaScript code that we wrote and needed to include a clean, polished, and responsive user interface.
+
+    The importance of completing this task lies in what we will experience in our journey to becoming full-stack web developers. It is likely that during an interview process we will be asked to complete a coding assessment. Typically these coding assessments are a combination of multiple-choice questions and interactive coding challenges. So to help us become familiar with these tests this week's task allows us to get a glimpse of what we can expect to face in the real world! 
+    
 ## User Story
 
 ```
