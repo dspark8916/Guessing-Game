@@ -18,25 +18,29 @@ SO THAT I can gauge my progress compared to my peers
 
     **List of Tasks Completed**
 
-    1.
+    1. Created Github Repository with ReadMe file.
 
-    2.
+    2. Created index.html, script.js, and style.css files.
 
-    3.
+    3. Created jumbotron for title of game and start button on the first screen that appears.
 
-    4.
+    4. Created additional divs for questions to appear upon click, score and submit score button on quiz end, and highscores section to save your highscore upon submitting.
 
-    5.
+    5. Styled body, jumbotron, card-body, startBtn, questions section, and scores sectiong with css to give appealing look to game.
 
-    6.
+    6. Using javascript made start button functional to where game and timer begin upon click.
 
-    7.
+    7. After click on start button, used javascript to make additional questions appear after each is answered correctly or incorrectly.
 
-    8.
+    8. When questions are answered correctly 25 points are added to the score and the score is displayed.
 
-    9.
+    9. When questions are answered incorrectly 10 seconds is deducted from the timer. 
 
-    10.
+    10. Upon completion of the quiz or completion of the timer, the game ends and a field appears to enter your initials and submit your highscore.
+
+    11. Upon clicking submit you can then click on "Click here to see highscores" link to see highscores.
+
+    12. Steps 8 through 12 were made possible by creating multiple functions within js file and variables to grab elements from html file as well as a few if and else statements. 
 
 ## Link to Deployed Application & Screenshots of Completed Application
 
