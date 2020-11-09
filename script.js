@@ -59,7 +59,6 @@ var points = document.getElementById("scores");
 var endTime = document.querySelector("timer");
 var over = document.getElementById("endGame");
 var finalScore = document.getElementById("finalScore");
-// var initials = document.getElementById("initials");
 var submitBtn = document.getElementById("submit");
 var topScores = document.getElementById("scorelist");
 var returnBtn = document.getElementById("back");
@@ -67,14 +66,6 @@ var clearBtn = document.getElementById("clear");
 var listLink = document.getElementById("listLink");
 var bestScores = document.getElementById("highscores");
 var startBtn = document.getElementById("start");
-// This function needs to start the timer and add text to questions
-// & answers and hide button and reveal question. 
-
-// document.getElementById("start").addEventListener("click", function() {
-//     intro.style.display = "none";
-//     start.style.display = "none";
-//     setTimer();
-// });
 
 startBtn.addEventListener("click", function begin() {
         intro.style.display = "none";

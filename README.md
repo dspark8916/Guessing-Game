@@ -37,7 +37,7 @@ SO THAT I can gauge my progress compared to my peers
 ## Link to Deployed Application & Screenshots of Completed Application
 
     **Live Link**
-[]()
+[Guessing Game](https://dspark8916.github.io/Guessing-Game/)
 
     **ScreenShots**
 ![]()
