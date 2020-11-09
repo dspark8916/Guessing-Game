@@ -68,19 +68,20 @@
         
         <div id = "endGame" style="display: none;">
             <div>
-                <h2>Game Over!!</h2>
+                <h2 id = "gover">Game Over!!</h2>
                 <p id = "finalScore"></p>
-                <p>Please Enter Your Initials</p>
+                <p id = "init">Please Enter Your Initials</p>
                 <input id="initials" type="text" required>
-                <button id="submit" onclick="savedScore();">Submit</button>
+                <button id="submit" onclick="savedScore();" class="list-group-item-success rounded-lg border border-dark text-black">Submit</button>
                 <h3 id = "listLink"><a href="#highscores">Click Here to See High Scores</a></h3>
             </div>
         </div>
         
         <div class="row justify-content-center" id="highscores" style="display: none;">
             <h1 id = "scorelist">--- Highscores ---</h1>
-            <button id = "back">Go Back</button>
-            <button id = "clear">Clear Highscores</button>
+            <button id = "back" class="btn-lg list-group-item-success rounded-lg border border-dark text-black">Go Back</button>
+            <br>
+            <button id = "clear" class="btn-lg list-group-item-success rounded-lg border border-dark text-black">Clear Highscores</button>
         </div>
 
     </div>

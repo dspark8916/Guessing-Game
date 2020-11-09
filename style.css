@@ -27,6 +27,25 @@ body {
 }
 
 #scores {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: bold;
+}
+
+#gover {
+    font-size: 40px;
+    font-weight: bold;
+}
+#init {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#back {
+    margin:auto;
+    display:block;
+}
+
+#clear {
+    margin:auto;
+    display:block;
 }
